@@ -18,7 +18,7 @@ class Micard extends StatelessWidget {
             minRadius: 55.0,
             backgroundImage: AssetImage("assets/images/angela.jpg"),
           ),
-          Text(
+          const Text(
             "Angela au",
             style: TextStyle(
               fontSize: 36.0,
@@ -50,7 +50,7 @@ class Micard extends StatelessWidget {
             child: Card(
               child: ListTile(
                 leading: Icon(Icons.lock, color: Colors.teal),
-                title: Text(
+                title: const Text(
                   "+92310 3896331",
                   style: TextStyle(
                     fontWeight: FontWeight.w400,
@@ -67,7 +67,7 @@ class Micard extends StatelessWidget {
             child: Card(
               child: ListTile(
                 leading: Icon(Icons.email, color: Colors.teal),
-                title: Text(
+                title: const Text(
                   "shaikhabubakar983@gmail.com",
                   style: TextStyle(
                     fontWeight: FontWeight.w400,

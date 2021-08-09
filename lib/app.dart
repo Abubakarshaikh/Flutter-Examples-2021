@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutterbootcamp/Counter/counter.dart';
+import 'package:flutterbootcamp/Destini/destini.dart';
+import 'package:flutterbootcamp/Dicee/dicee.dart';
+import 'package:flutterbootcamp/FormValidation/formValidation.dart';
+import 'package:flutterbootcamp/Magic8Ball/magic8ball.dart';
+import 'package:flutterbootcamp/News/news.dart';
+import 'package:flutterbootcamp/Quizzler/quizzler.dart';
+import 'package:flutterbootcamp/Xylophone/xylophone.dart';
 import 'package:flutterbootcamp/micard/micard.dart';
 
 class App extends StatelessWidget {
@@ -18,6 +26,54 @@ class App extends StatelessWidget {
             title: "Micard",
             onClick: () {
               Navigator.pushNamed(context, Micard.routeKey);
+            },
+          ),
+          Menu(
+            title: "Dicee",
+            onClick: () {
+              Navigator.pushNamed(context, Dicee.routeKey);
+            },
+          ),
+          Menu(
+            title: "Magic 8 Ball",
+            onClick: () {
+              Navigator.pushNamed(context, Magic8Ball.routeKey);
+            },
+          ),
+          Menu(
+            title: "Xylophone",
+            onClick: () {
+              Navigator.pushNamed(context, Xylophone.routeKey);
+            },
+          ),
+          Menu(
+            title: "Quizzler",
+            onClick: () {
+              Navigator.pushNamed(context, Quizzler.routeKey);
+            },
+          ),
+          Menu(
+            title: "Destini",
+            onClick: () {
+              Navigator.pushNamed(context, Destini.routeKey);
+            },
+          ),
+          Menu(
+            title: "Counter",
+            onClick: () {
+              Navigator.pushNamed(context, Counter.routeKey);
+            },
+          ),
+          Menu(
+            title: "Form Validation",
+            onClick: () {
+              Navigator.pushNamed(context, FormValidation.routeKey);
+            },
+          ),
+          Menu(
+            title: "News",
+            onClick: () {
+              Navigator.pushNamed(context, NewsPage.routeKey);
             },
           ),
         ],
