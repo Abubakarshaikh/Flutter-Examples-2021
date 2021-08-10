@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'counterBloc.dart';
+import 'counterBloc_core.dart';
 
 class Counter extends StatefulWidget {
   static const routeKey = "Counter";

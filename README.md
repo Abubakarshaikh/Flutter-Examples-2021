@@ -14,3 +14,27 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+1. MiCard: How to Build Beautiful UIs with Flutter Widgets
+2. Dicee: Building Apps with State
+3. Magic 8 Ball*
+4. Xylophone: Using Flutter and Dart Packages to Speed Up Development
+5. Quizzler: Modularising & Organising Flutter Code
+6. Destini*
+7. Counter: State Management Using Simple BloC
+8. News: News Api, State Management Using Simple BloC
+9. Form Validation: With Flutter_BloC
+10. Shopping Cart: 
+
+. Building UIs in Flutter
+. State management
+. Routes and navigation
+. Localization and internationalization
+. Animations
+. Working with JSON and other formats
+. Testing and profiling app
+. Offline storage
+. Push Notifications
+. integrate payment gateway
+. Firebase
+. Published app on stores

@@ -1,37 +1,31 @@
-import 'dart:async';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-enum CounterAction {
+enum CounterAction2 {
   Increment,
   Decrement,
   Reset,
+  Error,
 }
 
-class CounterBloc {
-  int _counter = 0;
+class CounterBloc2 extends Bloc<CounterAction2, int> {
+  CounterBloc2() : super(0);
 
-  final _stateStreamController = StreamController<int>();
-  StreamSink<int> get _stateSink => _stateStreamController.sink;
-  Stream<int> get stateStream => _stateStreamController.stream;
+  @override
+  Stream<int> mapEventToState(CounterAction2 event) async* {
+    switch (event) {
+      case CounterAction2.Increment:
+        yield state + 1;
+        break;
 
-  final _eventStreamController = StreamController<CounterAction>();
-  StreamSink<CounterAction> get eventSink => _eventStreamController.sink;
-  Stream<CounterAction> get _eventStream => _eventStreamController.stream;
+      case CounterAction2.Decrement:
+        yield state - 1;
+        break;
 
-  CounterBloc() {
-    _eventStream.listen((event) {
-      if (event == CounterAction.Increment) {
-        _counter++;
-      } else if (event == CounterAction.Decrement) {
-        _counter--;
-      } else if (event == CounterAction.Reset) {
-        _counter = 0;
-      }
-      _stateSink.add(_counter);
-    });
+      case CounterAction2.Reset:
+        yield state * 0 + 0;
+        break;
+      case CounterAction2.Error:
+        addError(Exception('unsupported event'));
+    }
   }
-
-  void dispose() {
-    _stateStreamController.close();
-    _eventStreamController.close();
-  }
-}
+} 

@@ -6,6 +6,7 @@ import 'package:flutterbootcamp/FormValidation/formValidation.dart';
 import 'package:flutterbootcamp/Magic8Ball/magic8ball.dart';
 import 'package:flutterbootcamp/News/news.dart';
 import 'package:flutterbootcamp/Quizzler/quizzler.dart';
+import 'package:flutterbootcamp/ShoppingCart/app.dart';
 import 'package:flutterbootcamp/Xylophone/xylophone.dart';
 import 'package:flutterbootcamp/micard/micard.dart';
 
@@ -65,15 +66,21 @@ class App extends StatelessWidget {
             },
           ),
           Menu(
+            title: "News",
+            onClick: () {
+              Navigator.pushNamed(context, NewsPage.routeKey);
+            },
+          ),
+          Menu(
             title: "Form Validation",
             onClick: () {
               Navigator.pushNamed(context, FormValidation.routeKey);
             },
           ),
           Menu(
-            title: "News",
+            title: "Shopping Cart",
             onClick: () {
-              Navigator.pushNamed(context, NewsPage.routeKey);
+              Navigator.pushNamed(context, ShoppingCart.routeKey);
             },
           ),
         ],
