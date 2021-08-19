@@ -12,7 +12,6 @@ class CartStarted extends CartEvent {
 
 class CartItemAdded extends CartEvent {
   const CartItemAdded(this.item);
-
   final Item item;
 
   @override

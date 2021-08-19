@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutterbootcamp/BMICalculator/bmiCalculator.dart';
 import 'package:flutterbootcamp/Counter/counter.dart';
 import 'package:flutterbootcamp/Destini/destini.dart';
 import 'package:flutterbootcamp/Dicee/dicee.dart';
@@ -9,6 +10,7 @@ import 'package:flutterbootcamp/News/news.dart';
 import 'package:flutterbootcamp/Quizzler/quizzler.dart';
 import 'package:flutterbootcamp/ShoppingCart/app.dart';
 import 'package:flutterbootcamp/ShoppingCart/simple_bloc_observer.dart';
+import 'package:flutterbootcamp/Wizard/wizard.dart';
 import 'package:flutterbootcamp/Xylophone/xylophone.dart';
 import 'micard/micard.dart';
 import 'app.dart';
@@ -23,8 +25,6 @@ class FlutterBootcamp extends StatelessWidget {
   const FlutterBootcamp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: App.routeKey,
       routes: {
@@ -35,11 +35,13 @@ class FlutterBootcamp extends StatelessWidget {
         Xylophone.routeKey: (context) => Xylophone(),
         Quizzler.routeKey: (context) => Quizzler(),
         Destini.routeKey: (context) => Destini(),
+        BMICalculator.routeKey: (context) => BMICalculator(),
         NewsPage.routeKey: (context) => NewsPage(),
         Counter.routeKey: (context) => Counter(),
         FormValidation.routeKey: (context) => FormValidation(),
         ShoppingCart.routeKey: (context) =>
             ShoppingCart(shoppingRepository: ShoppingRepository()),
+        Wizard.routeKey: (context) => Wizard(),
       },
     );
   }

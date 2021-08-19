@@ -33,8 +33,9 @@ samples, guidance on mobile development, and a full API reference.
 . Animations
 . Working with JSON and other formats
 . Testing and profiling app
+. Published app on stores
 . Offline storage
 . Push Notifications
 . integrate payment gateway
 . Firebase
-. Published app on stores
+

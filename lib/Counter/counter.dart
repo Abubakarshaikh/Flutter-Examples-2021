@@ -1,43 +1,60 @@
+import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
-import 'counterBloc_core.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutterbootcamp/Counter/bloc/counter_event.dart';
+import 'package:flutterbootcamp/Counter/bloc/counter_state.dart';
+import 'bloc/counter_bloc.dart';
 
-class Counter extends StatefulWidget {
+class Counter extends StatelessWidget {
   static const routeKey = "Counter";
   const Counter({Key? key}) : super(key: key);
 
   @override
-  _CounterState createState() => _CounterState();
+  Widget build(BuildContext context) {
+    return BlocProvider<CounterBloc>(
+      create: (context) => CounterBloc(),
+      child: MaterialApp(
+        home: DemoPage(),
+      ),
+    );
+  }
 }
 
-class _CounterState extends State<Counter> {
-  int counter = 0;
-  final counterBloc = CounterBloc();
+class CounterApp extends StatefulWidget {
+  const CounterApp({Key? key}) : super(key: key);
 
   @override
-  void dispose() {
-    // TODO: implement dispose
-    counterBloc.dispose();
-    super.dispose();
-  }
+  _CounterAppState createState() => _CounterAppState();
+}
+
+class _CounterAppState extends State<CounterApp> {
+  // int counter = 0;
+  // final counterBloc = CounterBloc();
+
+  // @override
+  // void dispose() {
+  //   // TODO: implement dispose
+  //   counterBloc.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
+    final countBloc = context.read<CounterBloc>();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
         title: Text("Counter App"),
       ),
-      body: StreamBuilder(
-        initialData: 0,
-        stream: counterBloc.stateStream,
-        builder: (context, snapshot) {
-          return Center(
-            child: Text(
-              "You have Pushed the Button this many times. \n${snapshot.data}",
+      body: Center(
+        child: BlocBuilder<CounterBloc, CounterState>(
+          builder: (contex, state) {
+            return Text(
+              "You have Pushed the Button this many times. \n${state.count}",
               textAlign: TextAlign.center,
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
@@ -47,7 +64,7 @@ class _CounterState extends State<Counter> {
             backgroundColor: Colors.teal,
             child: Icon(Icons.add),
             onPressed: () {
-              counterBloc.eventSink.add(CounterAction.Increment);
+              countBloc.add(const Increment());
             },
           ),
           FloatingActionButton(
@@ -55,7 +72,7 @@ class _CounterState extends State<Counter> {
             backgroundColor: Colors.teal,
             child: Icon(Icons.remove),
             onPressed: () {
-              counterBloc.eventSink.add(CounterAction.Decrement);
+              countBloc.add(const Decrement());
             },
           ),
           FloatingActionButton(
@@ -63,11 +80,29 @@ class _CounterState extends State<Counter> {
             backgroundColor: Colors.teal,
             child: Icon(Icons.loop),
             onPressed: () {
-              counterBloc.eventSink.add(CounterAction.Reset);
+              countBloc.add(const Reset());
             },
           ),
         ],
       ),
+    );
+  }
+}
+
+class DemoPage extends StatelessWidget {
+  const DemoPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocListener<CounterBloc, CounterState>(
+      listener: (context, state) {
+        Flushbar(
+          title: "Hey Ninja",
+          message: "counter bloc",
+          duration: Duration(seconds: 3),
+        )..show(context);
+      },
+      child: CounterApp(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterbootcamp/BMICalculator/bmiCalculator.dart';
 import 'package:flutterbootcamp/Counter/counter.dart';
 import 'package:flutterbootcamp/Destini/destini.dart';
 import 'package:flutterbootcamp/Dicee/dicee.dart';
@@ -7,6 +8,7 @@ import 'package:flutterbootcamp/Magic8Ball/magic8ball.dart';
 import 'package:flutterbootcamp/News/news.dart';
 import 'package:flutterbootcamp/Quizzler/quizzler.dart';
 import 'package:flutterbootcamp/ShoppingCart/app.dart';
+import 'package:flutterbootcamp/Wizard/wizard.dart';
 import 'package:flutterbootcamp/Xylophone/xylophone.dart';
 import 'package:flutterbootcamp/micard/micard.dart';
 
@@ -59,6 +61,19 @@ class App extends StatelessWidget {
               Navigator.pushNamed(context, Destini.routeKey);
             },
           ),
+          // BMICalculator
+          Menu(
+            title: "BMI Calculator",
+            onClick: () {
+              Navigator.pushNamed(context, BMICalculator.routeKey);
+            },
+          ),
+          Menu(
+            title: "Shopping Cart",
+            onClick: () {
+              Navigator.pushNamed(context, ShoppingCart.routeKey);
+            },
+          ),
           Menu(
             title: "Counter",
             onClick: () {
@@ -78,9 +93,9 @@ class App extends StatelessWidget {
             },
           ),
           Menu(
-            title: "Shopping Cart",
+            title: "Wizard",
             onClick: () {
-              Navigator.pushNamed(context, ShoppingCart.routeKey);
+              Navigator.pushNamed(context, Wizard.routeKey);
             },
           ),
         ],

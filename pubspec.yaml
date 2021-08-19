@@ -21,6 +21,8 @@ dependencies:
   dio: ^4.0.0
   riverpod: ^0.14.0+3
   formz: ^0.4.0
+  another_flushbar: ^1.10.24
+  font_awesome_flutter: ^9.1.0
 
 
 
