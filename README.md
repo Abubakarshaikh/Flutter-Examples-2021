@@ -24,7 +24,12 @@ samples, guidance on mobile development, and a full API reference.
 7. Counter: State Management Using Simple BloC
 8. News: News Api, State Management Using Simple BloC
 9. Form Validation: With Flutter_BloC
-10. Shopping Cart: 
+10. Shopping Cart
+11. Flutter Weather - Clima
+12. Firestore Todos
+13. Photobooth
+14. Gallery
+15. Spacex-go
 
 . Building UIs in Flutter
 . State management
